@@ -10,12 +10,12 @@ const logger = loggers.logger;
 
 function createBot() {
    const bot = mineflayer.createBot({
-      username: config['bot-account']['username'],
-      password: config['bot-account']['password'],
+      username: config['bot-account']['Admin'],
+      password: config['bot-account']['123123'],
       auth: config['bot-account']['type'],
-      host: config.server.ip,
-      port: config.server.port,
-      version: config.server.version,
+      host: config.tradeworld.aternos.me,
+      port: config.server.60259,
+      version: config.server.1.20.4,
    });
 
    bot.loadPlugin(pathfinder);
@@ -25,7 +25,7 @@ function createBot() {
    bot.pathfinder.setMovements(defaultMove);
 
    bot.once('spawn', () => {
-      logger.info("Bot joined to the server");
+      logger.info("Admin зашол афк на нашем сервере(");
 
       if (config.utils['auto-auth'].enabled) {
          logger.info('Started auto-auth module');
